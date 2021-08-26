@@ -1,0 +1,17 @@
+---
+output: rmarkdown::github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(message=FALSE, comment="#>")
+```
+
+## Bioinformatics Journals
+
+```{r}
+library(scholar)
+journals <- read.delim("data/journals.txt", header=FALSE)[[1]]
+impact <- scholar::get_impactfactor(journals, max.distance=0.0)
+```
